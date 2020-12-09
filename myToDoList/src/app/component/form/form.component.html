@@ -1,0 +1,5 @@
+
+<form class="form"  #taskForm = "ngForm" (ngSubmit)="handleClick(taskForm)" >
+  <input  type="text" name="task" class="form__txtInp" size="100%"  [(ngModel)]="inputValue">
+  <button class="action-button shadow animate green">Добавити</button>
+</form>

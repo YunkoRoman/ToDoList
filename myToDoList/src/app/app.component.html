@@ -1,0 +1,26 @@
+<div class="general_box">
+  <div class="header">
+    <div class="header__title">
+      <p class="title">Незабудь зробити:</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="body__toDoList">
+      <div class="body__toDoList__task" *ngFor="let task of ToDoList; index as i">
+        <input type="checkbox" [(ngModel)]="task.completed">
+        <span class="task_text" [ngClass]="{'checked': task.completed}">{{task.newToDo}}</span>
+        <span class="deleteBtn" (click)="deleteTask(i)"><img [src]="'assets/remove.png'" alt="icon"></span>
+      </div>
+      <div class="newTask">
+        <p class="newTask__title">Додати нове завдання: </p>
+        <app-form (postTaskEvent)=postTask($event)></app-form>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+
+  </div>
+
+</div>
